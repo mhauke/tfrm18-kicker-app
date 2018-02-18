@@ -20,9 +20,9 @@ services:
     MYSQL_ROOT_PASSWORD: netapp123 
 
 volumes:
- html_root:
+ vol_html_root:
   driver: netapp:latest
- site_config:
+ vol_site_config:
   driver: netapp:latest
  vol_mysql:
   driver: netapp:latest
