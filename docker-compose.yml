@@ -1,0 +1,19 @@
+version: '3'
+services:
+ web:
+  image: nginx:latest
+  ports:
+  - "80:80"
+  volumes:
+  - html_root:/code
+  - site_config:/etc/nginx/conf.d/
+ php:
+  image: php:7-fpm
+  volumes:
+  - html_root:/code
+
+volumes:
+ html_root:
+  driver: netapp:latest
+ site_config:
+  driver: netapp:latest
