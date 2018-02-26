@@ -25,7 +25,7 @@ node {
 		
 
       // start the application
-      sh "sudo docker run -d --name nginx_${env.BUILD_NUMBER} -v tfrm18kickerapp_vol_html_root_${env.BUILD_NUMBER}:/code -v tfrm18kickerapp_vol_site_config_${env.BUILD_NUMBER}:/etc/nginx/conf.d/ --network=tfrm18kickerapp_default --link tfrm18kickerapp_php_1 -p 80 nginx:latest "
+      sh "sudo docker run -d --name nginx_${env.BUILD_NUMBER} -v tfrm18kickerapp_vol_html_root_${env.BUILD_NUMBER}:/code -v tfrm18kickerapp_vol_site_config_${env.BUILD_NUMBER}:/etc/nginx/conf.d/ --network=tfrm18kickerapp_default -p 80 nginx:latest "
 	  
     }
 
