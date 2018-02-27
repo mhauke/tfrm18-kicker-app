@@ -11,7 +11,7 @@ node {
     }
 
     stage ("Build Container"){
-      sh "sudo docker image tag nginx:latest nginx:${env.BUILD_NUMBER}"
+      sh "docker image tag nginx:latest nginx:${env.BUILD_NUMBER}"
     }
 
     stage ("Create Test instance"){
