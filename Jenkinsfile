@@ -10,9 +10,9 @@ node {
       checkout scm
     }
 
-    stage ("Build Container"){
-      sh "docker image tag nginx:latest nginx:${env.BUILD_NUMBER}"
-    }
+    //stage ("Build Container"){
+    //  sh "docker image tag nginx:latest nginx:${env.BUILD_NUMBER}"
+    //}
 
     stage ("Create Test instance"){
       // clone the docker volume for test purposes
