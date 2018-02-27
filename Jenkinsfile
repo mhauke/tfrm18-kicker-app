@@ -42,9 +42,9 @@ node {
       // we passed it as an environment variable when starting Jenkins.  Very fragile but there is
       // no other easy way without introducing service discovery of some sort
       echo "Check if webapp port is listening"
-      sh "curl http://${env.MH_DOCKER_HOST_IP}:${TEST_PORT}/v1/ping -o curl.out"
-      sh "cat curl.out"
-      sh "awk \'/true/{f=1} END{exit!f}\' curl.out"
+      sh "sudo curl http://${env.MH_DOCKER_HOST_IP}:${TEST_PORT}/v1/ping -o curl.out"
+      sh "sudo cat curl.out"
+      sh "sudo awk \'/true/{f=1} END{exit!f}\' curl.out"
       echo "<<<<<<<<<< Access this test build at http://${MH_DOCKER_HOST_IP}:${TEST_PORT} >>>>>>>>>>"
     }
 
